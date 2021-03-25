@@ -11,17 +11,15 @@ For the best user experience, it is deployed as a webapp on heroku using Flask. 
 
 Data: 
 
-	1) Kaggle: The data is obtained from kaggle.com. It is apprx 1.4 GB CSV and includes the criagslist ads of apprx 500,000 vehicles. It consists of listing price, manufacturer, model, year, odometer, condition, transmission, region, state, VIN number, ad id, cylinders, fuel, drive, type, lat, long, description. 
+1) Kaggle: The data is obtained from kaggle.com. It is apprx 1.4 GB CSV and includes the criagslist ads of apprx 500,000 vehicles. It consists of listing price, manufacturer, model, year, odometer, condition, transmission, region, state, VIN number, ad id, cylinders, fuel, drive, type, lat, long, description. 
 
-	2) NewCarTestDrive.com and Google.com: For each car, its MSRP value is scraped from NewCarTestDrive.com if it is available there, otherwise from Google.com. (Including the MSRP values, improved the MAE of the best performing model 68% by decreasing it from 1440 to 453.)
+2) NewCarTestDrive.com and Google.com: For each car, its MSRP value is scraped from NewCarTestDrive.com if it is available there, otherwise from Google.com. (Including the MSRP values, improved the MAE of the best performing model 68% by decreasing it from 1440 to 453.)
 
 Model: 
 
-	Among many estimators, a GroupbyEstimator that uses different Random Forest Regressors for each manufacturer group is adopted. It yields an R2 value of %98.75 (MAE: 453), while it is 92% (MAE: 941) on the test set. 
+Among many estimators, a GroupbyEstimator that uses different Random Forest Regressors for each manufacturer group is adopted. It yields an R2 value of %98.75 (MAE: 453), while it is 92% (MAE: 941) on the test set. 3 different predictors (Linear Refression, Ridge Regression, and Random Forest Regressor) are used in 3 three different settings (A GroupbyEstiamtor for 'state' and 'manufacturer each, and one full model for the entire dataset. The best performing model out of the 9 is adopted to further the analysis. Below is a result that compares different scenerios. (A GridsearchCV predictor is used to optimize the Ridge and the Forest models).  
 
-	3 different predictors (Linear Refression, Ridge Regression, and Random Forest Regressor) are used in 3 three different settings (A GroupbyEstiamtor for 'state' and 'manufacturer each, and one full model for the entire dataset. The best performing model out of the 9 is adopted to further the analysis. Below is a result that compares different scenerios. (A GridsearchCV predictor is used to optimize the Ridge and the Forest models).  
 
-|--------------------------------------------------------------------|
 | Model                 |    Trained      | Train_Error | Test Error |
 |-----------------------|-----------------|-------------|------------|
 | LinearRegression      | No groupby      |    2210     |    2245    |
@@ -33,7 +31,7 @@ Model:
 | RandomForestRegressor | No groupby      |     453     |    1254    |
 | RandomForestRegressor | On states       |     617     |    1647    |
 | RandomForestRegressor | On manufacturer |     453     |     941    |
-|--------------------------------------------------------------------|
+
 
 WebApp:
 

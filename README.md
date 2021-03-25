@@ -1,11 +1,12 @@
-It is always a huge hassle to decide when looking for a used car. There are so many options to consider. When doing a market research, people usually looks for the owner reviews, common technical issues, and local price of a spcific car. They might end up comparing it with other years or conditions of the same car as well as its price in neighbors for an informed decision. 
+It is always a huge hassle to decide when looking for a used car. There are so many options to consider. When doing a market research, people usually research the owner reviews, common technical issues, and local price of a spcific car. They might end up comparing it with other years or conditions of the same car as well as its price in neighbors for a better informed decision. 
 
-This project aims to guide people in their search for a used car. It asks the potential buyer a few details about the car that they are interested in: make, model, year, odometer, condition, transmission, and state, and returns the following:
-    - a picture of the car, 
-    - the summary of owner reviews, 
-    - the most 6 common technical issues reported by the owners, 
-    - a bar-chart that compares the predicted average price for different year and condition combinations of the same car, 
-    - and finally plots the average predicted prices across states on the U.S. map. 
+This project aims to guide people in their search for a used car. It asks the potential buyer a few details about the car that they are interested in: make, model, year, odometer, condition, transmission, and state, and returns the following in a newat and compact way:
+
+  - a picture of the car, 
+  - the summary of owner reviews, 
+  - the most 6 common technical issues reported by the owners, 
+  - a bar-chart that compares the predicted average price for different year and condition combinations of the same car, 
+  - and finally plots the predicted prices across the states on the U.S. map. 
 
 For the best user experience, it is deployed as a webapp on heroku using Flask. One can simply go to https://usedcars-capstone.herokuapp.com/ to give it a try. 
 
@@ -33,7 +34,7 @@ Among many estimators, a GroupbyEstimator that uses different Random Forest Regr
 | RandomForestRegressor | On manufacturer |     453     |     941    |
 
 
-WebApp:
+The delivirable of this project is a webapp. What it yields and the sources are listed below. 
 
   - Picture: 
       scraped from www.newcartestdrive.com 

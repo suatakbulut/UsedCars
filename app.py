@@ -7,7 +7,8 @@ import numpy as np
 
 app = Flask(__name__) 
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 
-
+# model_path = 'forest_model.dill'
+model_path = 'static/model.dill'
 @app.route('/')
 def root(): 
 	return render_template('index.html')
@@ -43,7 +44,7 @@ def submit():
 		
 		car = Car(car_data)
 		reviews = car.reviews() 
-		model = Model() 
+		model = Model(model_path = model_path) 
 		map_reference = car.map(model) 
 		barChart = car.barChart(model) 
 		price = car.price(model) 

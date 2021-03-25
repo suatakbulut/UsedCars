@@ -1,0 +1,5 @@
+.vscode 
+train 
+__pycache__ 
+static/model
+static/car_img.jpg
